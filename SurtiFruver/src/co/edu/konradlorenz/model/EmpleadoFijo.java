@@ -3,17 +3,13 @@ package co.edu.konradlorenz.model;
 class EmpleadoFijo extends Empleado {
 	private short DiasTrabajados;
 
-	public EmpleadoFijo(String nombre, String cargo, long salario, short diasTrabajados) {
-		super(nombre, cargo, salario);
+	public EmpleadoFijo(String nombre, String cargo, short diasTrabajados) {
+		super(nombre, cargo);
 		DiasTrabajados = diasTrabajados;
 	}
 	
 	public EmpleadoFijo() {}
 
-	public EmpleadoFijo(String nombre, String cargo, long salario) {
-		super(nombre, cargo, salario);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public String toString() {

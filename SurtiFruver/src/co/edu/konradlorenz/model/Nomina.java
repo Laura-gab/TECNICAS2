@@ -7,8 +7,8 @@ public class Nomina {
 	private List<Empleado> empleados;
 
 	public Nomina() {
+        empleados = new ArrayList<>();
         cargarEmpleados();
-	     empleados = new ArrayList<>();
 	    }    
 
 	public void agregarEmpleado(Empleado empleado) {
@@ -40,7 +40,6 @@ public class Nomina {
                     EmpleadoFijo empleado = new EmpleadoFijo(nombre,cargo, trabajo);
                     agregarEmpleado(empleado);
                 } else if (cargo.equalsIgnoreCase("Temporal")) {
-                    double tarifaPorHora = Double.parseDouble(datos[4]);
                     EmpleadoTemporal empleado = new EmpleadoTemporal(nombre, cargo, trabajo);
                     agregarEmpleado(empleado);
                 }

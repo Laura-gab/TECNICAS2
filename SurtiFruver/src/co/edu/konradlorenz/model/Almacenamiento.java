@@ -19,14 +19,15 @@ public class Almacenamiento {
 		this.producto = producto;
 		this.cantidad = cantidad;
 		DiasAlmacenado = diasAlmacenado;
+
 	}
 
 	public Almacenamiento() {
-		
+		llenarAlmacenamiento();
 	}
 		
 		public void llenarAlmacenamiento() {
-			File fichero = new File("co/edu/konradlorenz/model/Productos2");
+			File fichero = new File("C:\\Users\\USUARIO\\IdeaProjects\\TECNICAS2\\SurtiFruver\\src\\co\\edu\\konradlorenz\\model\\Productos2");
 
 	        try ( BufferedReader reader = new BufferedReader(new FileReader(fichero));){
 

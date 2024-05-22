@@ -8,13 +8,13 @@ public class EmpleadoTemporal extends Empleado {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EmpleadoTemporal(String nombre, String cargo, long salario) {
-		super(nombre, cargo, salario);
+	public EmpleadoTemporal(String nombre, String cargo) {
+		super(nombre, cargo);
 		// TODO Auto-generated constructor stub
 	}
 
-	public EmpleadoTemporal(String cargo,String nombre,  long salario, short horasTrabajadas) {
-		super(nombre, cargo, salario);
+	public EmpleadoTemporal(String nombre,String cargo, short horasTrabajadas) {
+		super(nombre, cargo);
 		HorasTrabajadas = horasTrabajadas;
 	}
 

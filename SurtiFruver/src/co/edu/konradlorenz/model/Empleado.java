@@ -6,11 +6,11 @@ public abstract class Empleado {
     private long salario;
     
 
-	public Empleado(String nombre, String cargo, long salario) {
+	public Empleado(String nombre, String cargo) {
 		super();
 		this.nombre = nombre;
 		this.cargo = cargo;
-		this.salario = salario;
+		this.salario = calcularSalario();
 	}
 
 
