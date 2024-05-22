@@ -11,12 +11,14 @@ package co.edu.konradlorenz.controller;
 		private Venta ventasRealizadas;
 		private double gastosTotales; 
 		private double balance;
+		private Nomina nomina;
 		private ArrayList<Venta> almacenamientoVenta = new ArrayList<>();
 		public void revisarVentas() {
 			
 		}
 		
-		public String realizarNomina(Nomina nomina) {
+		public String realizarNomina() {
+
 			 String reportesNomina = "";
 			    for (Empleado empleado : nomina.obtenerEmpleados()) {
 			        double salario = empleado.calcularSalario();
@@ -27,13 +29,7 @@ package co.edu.konradlorenz.controller;
 
 		public void calcularGastosIngresos() {}
 		
-		public void gestionarAlmacenamiento() {
-			switch () {
-			
-			case 1:
-				almacenamiento.agregarProducto();
-			}
-		}
+
 		
 		
 		

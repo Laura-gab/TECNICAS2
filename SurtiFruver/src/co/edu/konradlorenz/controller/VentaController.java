@@ -18,14 +18,14 @@ public class VentaController {
     	switch (op) {
     	case 1: //registrar nueva venta
     		do {
-    		VentaActul();
+    		//VentaActul();
     		}while(op!=8);
         case 2: //eliminar venta
 
         case 3: //añadir Fecha
     	break;
     	
-    	case 2: //mostrar todas las ventas 
+    	case 4: //mostrar todas las ventas
     		obtenerVentasRealizadas(); 
     	break;
     	}

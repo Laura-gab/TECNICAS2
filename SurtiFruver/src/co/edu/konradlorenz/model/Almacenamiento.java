@@ -34,7 +34,8 @@ public class Almacenamiento {
 	                while ((linea = reader.readLine()) != null) {
 	                String array[] = linea.split(";");
 	                Producto producto1= new Producto (Short.valueOf(array[0]), array[1],Integer.parseInt(array[2]),Double.parseDouble(array[3]),Short.valueOf(array[4]));
-	                Almacenamiento almace1 = new Almacenamiento( producto1,Short.valueOf(array[4]),Integer.parseInt(array[2]));
+					this.cantidad = Short.valueOf(array[4]);
+					Almacenamiento almace1 = new Almacenamiento( producto1,Short.valueOf(array[4]),Integer.parseInt(array[2]));
 	                almacenamiento.put(Short.valueOf(array[0]), almace1);
 	                }
 	        } catch (FileNotFoundException e) {
@@ -89,13 +90,21 @@ public class Almacenamiento {
 			else
 				return " "; 
 	    }
-	    public int actualizarCantidadProducto(short cantidadV) throws CantidadNegativaException {
-	    	 	cantidad= (short) (cantidad- cantidadV);
-	    	 	if(cantidad<=0)
-	    	 		throw new CantidadNegativaException() ;
+	    public int actualizarCantidadProductoVenta (short cantidadV) throws CantidadNegativaException {
+
+	    	 	if(cantidad<=0 || cantidad<cantidadV)
+					throw new CantidadNegativaException() ;
+				else
+					cantidad= (short) (cantidad- cantidadV);
 	    	return cantidad;
 	    }
+
+		public int actualizarCantidadProductoAñadir (short cantidadA) {
+			cantidad= (short) (cantidad+ cantidadA);
+		return cantidad;
+	}
 	    public void agregarProducto(short codigo,Almacenamiento almace) {
+
 			almacenamiento.put(codigo,almace);
 		}
 

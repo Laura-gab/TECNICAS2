@@ -7,6 +7,7 @@ public class Nomina {
 	private List<Empleado> empleados;
 
 	public Nomina() {
+        cargarEmpleados();
 	     empleados = new ArrayList<>();
 	    }    
 
@@ -27,7 +28,7 @@ public class Nomina {
 	}
 	
 	public void cargarEmpleados() {
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Usuario\\eclipse-workspace\\SurtiFruver\\src\\co\\edu\\konradlorenz\\model\\Empleados"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\USUARIO\\IdeaProjects\\TECNICAS2\\SurtiFruver\\src\\co\\edu\\konradlorenz\\model\\Empleados"))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(";");
