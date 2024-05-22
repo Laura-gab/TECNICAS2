@@ -18,7 +18,7 @@ public class VentaController {
     	switch (op) {
     	case 1: //registrar nueva venta
     		do {
-    		VentaActual();
+    		VentaActul();
     		}while(op!=8);
         case 2: //eliminar venta
 
