@@ -26,7 +26,7 @@ public class Almacenamiento {
 	}
 		
 		public void llenarAlmacenamiento() {
-			File fichero = new File("C:\\Users\\Usuario\\eclipse-workspace\\SurtiFruver\\src\\co\\edu\\konradlorenz\\model\\Productos");
+			File fichero = new File("co/edu/konradlorenz/model/Productos2");
 
 	        try ( BufferedReader reader = new BufferedReader(new FileReader(fichero));){
 

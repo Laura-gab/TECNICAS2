@@ -1,18 +1,16 @@
 package co.edu.konradlorenz.controller;
+import co.edu.konradlorenz.model.Venta;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.konradlorenz.model.DetalleVenta;
-import co.edu.konradlorenz.model.Producto;
-import co.edu.konradlorenz.model.Venta;
-
 public class VentaController {
     private Venta ventaActual;
-    private List<Venta> ventasRealizadas;
+    private ArrayList<Venta> ventasRealizadas;
     
     public VentaController() {
         this.ventaActual = new Venta();
-        this.ventasRealizadas = new ArrayList<>();
+        this.ventasRealizadas = new ArrayList<Venta>();
     }
 
     public void abrirCaja (short op) {//arrancar
@@ -22,6 +20,9 @@ public class VentaController {
     		do {
     		VentaActual();
     		}while(op!=8);
+        case 2: //eliminar venta
+
+        case 3: //añadir Fecha
     	break;
     	
     	case 2: //mostrar todas las ventas 

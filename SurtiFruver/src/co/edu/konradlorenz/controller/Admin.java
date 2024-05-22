@@ -1,13 +1,5 @@
 package co.edu.konradlorenz.controller;
 
-	import java.io.BufferedReader;
-	import java.io.BufferedWriter;
-	import java.io.File;
-	import java.io.FileNotFoundException;
-	import java.io.FileReader;
-	import java.io.FileWriter;
-	import java.io.IOException;
-	import java.io.PrintWriter;
 	import java.util.ArrayList;
 	import java.util.HashMap;
 
@@ -19,7 +11,7 @@ package co.edu.konradlorenz.controller;
 		private Venta ventasRealizadas;
 		private double gastosTotales; 
 		private double balance;
-		private ArrayList< Venta> almacenamientoVenta = new ArrayList<>();
+		private ArrayList<Venta> almacenamientoVenta = new ArrayList<>();
 		public void revisarVentas() {
 			
 		}
