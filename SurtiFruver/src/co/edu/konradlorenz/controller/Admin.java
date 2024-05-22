@@ -35,7 +35,7 @@ package co.edu.konradlorenz.controller;
 
 		public void calcularGastosIngresos() {}
 		
-		public void gestionarInventario() {
+		public void gestionarAlmacenamiento() {
 			switch () {
 			
 			case 1:
