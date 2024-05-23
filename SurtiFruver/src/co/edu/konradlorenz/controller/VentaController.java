@@ -7,16 +7,16 @@ import java.util.List;
 public class VentaController {
     private Venta ventaActual;
     private ArrayList<Venta> ventasRealizadas;
-    
+
     public VentaController() {
         this.ventaActual = new Venta();
-        this.ventasRealizadas = new ArrayList<Venta>();
+        this.ventasRealizadas =new ArrayList<>();
     }
 
     public void abrirCaja (short op) {//arrancar
-    	
+
     	switch (op) {
-    	case 1: //registrar nueva venta
+    	case 1: //registrar venta
     		do {
     		//VentaActul();
     		}while(op!=8);
