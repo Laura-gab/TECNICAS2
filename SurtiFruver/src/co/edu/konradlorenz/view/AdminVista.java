@@ -9,24 +9,24 @@ public class AdminVista {
         this.scanner = new Scanner(System.in);
     }
 
-    public int mostrarMenu() {
-        System.out.println("Seleccione una opción:");
-        System.out.println("1. Agregar elemento");
-        System.out.println("2. Modificar elemento");
-        System.out.println("3. Eliminar elemento");
-        System.out.println("4. Obtener elemento");
-        System.out.println("5. Salir");
+    public short valorShort(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextShort();
+    }
+
+    public String string(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.next();
+    }
+
+    public int valorInt(String mensaje) {
+        System.out.print(mensaje);
         return scanner.nextInt();
     }
 
-    public short obtenerClave() {
-        System.out.print("Ingrese la clave del elemento: ");
-        return scanner.nextShort();
-    }
-
-    public Object obtenerValor() {
-        System.out.print("Ingrese el valor del elemento: ");
-        return scanner.nextShort();
+    public double valorDouble(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextDouble();
     }
 
     public void mostrarResultado(Object resultado) {
@@ -36,4 +36,10 @@ public class AdminVista {
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
+
+    public int mostrarMenu(String mensaje) {
+        System.out.println(mensaje);
+        return scanner.nextInt();
+    }
 }
+

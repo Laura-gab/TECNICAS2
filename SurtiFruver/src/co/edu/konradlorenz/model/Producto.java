@@ -9,7 +9,7 @@ public class Producto implements PrecioProducto {
     
     
 
-	public Producto(short codigo, String nombre,  int diasAlmacenado, double precioCompra, short cantidadCompra) {
+	public Producto(short codigo, String nombre, double precioCompra, short cantidadCompra) {
 		super();
 		this.nombre = nombre;
 		this.codigo = codigo;
@@ -51,7 +51,7 @@ public class Producto implements PrecioProducto {
 	}
 
 
-	public void setCantidadCompra(byte cantidadCompra) {
+	public void setCantidadCompra(short cantidadCompra) {
 		this.cantidadCompra = cantidadCompra;
 	}
 
