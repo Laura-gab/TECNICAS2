@@ -6,49 +6,60 @@ package co.edu.konradlorenz.controller;
 
 	import co.edu.konradlorenz.model.*;
 	import co.edu.konradlorenz.view.AdminVista;
+	import co.edu.konradlorenz.view.NominaView;
 
 public class Admin {
 
-	private Venta ventasRealizadas;
 	private double gastosTotales;
 	private double balance;
 	private Nomina nomina;
 	private Almacenamiento almacenamiento;
 	private AdminVista adminVista;
-	private ArrayList<Venta> almacenamientoVenta = new ArrayList<>();
-
-	public void arrancar() {
-		gestionarAlmacenamiento();
-		realizarNomina();
-
-	}
+	private VentaController ventaController;
 
 	public Admin() {
 		this.nomina = new Nomina();
 		this.almacenamiento = new Almacenamiento();
 		this.adminVista = new AdminVista();
+		nomina = new Nomina();
+		ventaController = new VentaController(almacenamiento);
 	}
+	public void arrancar() {
+		int opcion;
+	do {
+		opcion = adminVista.mostrarMenu("Seleccione una opción:\n 1. Gestionar almacenamiento \n 2. Realizar nómina \n . Abrir caja \n";
+		System.out.println("");
+		System.out.println("3");
+		System.out.println("4. Gestionar gastos e ingresos");
+		System.out.println("5. Salir");
 
-	public String realizarNomina() {
-		if (nomina != null) {
-
-			// Obtener la lista de empleados
-			List<Empleado> empleados = nomina.obtenerEmpleados();
-			if (empleados != null) {
-				String reportesNomina = "";
-				for (Empleado empleado : nomina.obtenerEmpleados()) {
-					double salario = empleado.calcularSalario();
-					reportesNomina += "Empleado: " + empleado.getNombre() + ", Salario: " + salario + "\n";
-				}
-				return reportesNomina;
-			} else {
-				return "Error: La lista de empleados está vacía o no se pudo cargar.";
-			}
-		} else {
-			return "Error: La nomina no está inicializada.";
+		switch (opcion) {
+			case 1:
+				gestionarAlmacenamiento();
+				break;
+			case 2:
+				mostrarNomina();
+				break;
+			case 3:
+				abrirCaja()
+			DecrementarDiasAlmacenado();
+				break;
+			case 4:
+				gestionarGastosEIngresos();
+				break;
+			case 5:
+				adminVista.mostrarMensaje("Saliendo...");
+				break;
+			default:
+				adminVista.mostrarMensaje("Opción no válida.");
 		}
-	}
+	} while (opcion != 5);
+}
 
+	public void realizarNomina() {
+		NominaView nominaView = new NominaView(nomina);
+		nominaView.setVisible(true);
+	}
 	public void gestionarAlmacenamiento() {
 		boolean salir = false;
 		while (!salir) {
@@ -159,7 +170,7 @@ public class Admin {
 		for (Almacenamiento almacen : almacenamiento.getAlmacenamientos().values()) {
 			int diasAlmacenado = almacen.getDiasAlmacenado();
 			if (diasAlmacenado > 0) {
-				almacen.setDiasAlmacenado(diasAlmacenado - 1);
+				almacen.alertaMaximoDiasAlmacenado(almacen.setDiasAlmacenado(diasAlmacenado - 1));
 				return " ";
 			} else {
 				Producto producto = almacen.getProducto();

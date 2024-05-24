@@ -1,5 +1,7 @@
 package co.edu.konradlorenz.model;
 
+import co.edu.konradlorenz.controller.VentaController;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +22,6 @@ public class Almacenamiento {
 	}
 
 	public Almacenamiento() {
-		llenarAlmacenamiento();
 	}
 
 	public void llenarAlmacenamiento() {
@@ -82,18 +83,26 @@ public class Almacenamiento {
 
 		return false;
 	}
-	public int actualizarCantidadProductoVenta (short cantidadV) throws CantidadNegativaException {
+	public int actualizarCantidadProductoVenta (short clave,int cantidadV) throws CantidadNegativaException {
 
-		if(cantidad<=0 || cantidad<cantidadV)
-			throw new CantidadNegativaException() ;
-		else
-			cantidad= (short) (cantidad- cantidadV);
+		Almacenamiento almacen = almacenamiento.get(clave);
+		if (almacen != null && almacen.getCantidad() >= cantidad) {
+			almacen.setCantidad((short) (almacen.getCantidad() - cantidad));
+		} else {
+			throw new CantidadNegativaException() ;}
+
 		return cantidad;
 	}
 
 	public int actualizarCantidadProductoAñadir (short cantidadA) {
 		cantidad= (short) (cantidad+ cantidadA);
 		return cantidad;
+	}
+	public String alertaMaximoDiasAlmacenado(Almacenamiento producto) {
+		if(producto.diasAlmacenado<5)
+			return"Producto a punto de expirar";
+		else
+			return " ";
 	}
 
 }
